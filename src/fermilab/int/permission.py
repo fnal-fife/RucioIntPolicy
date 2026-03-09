@@ -163,7 +163,11 @@ def perm_update_rse(issuer: "InternalAccount", kwargs: dict[str, Any], *, sessio
     :param session: The DB session to use
     :returns: True if account is allowed, otherwise False
     """
-    return _is_root(issuer) or has_account_attribute(account=issuer, key='admin', session=session)
+    a = True
+    if a:
+        raise Exception
+    else:
+        return _is_root(issuer) or has_account_attribute(account=issuer, key='admin', session=session)
 
 
 def perm_add_rule(issuer: "InternalAccount", kwargs: dict[str, Any], *, session: "Optional[Session]" = None) -> bool:
